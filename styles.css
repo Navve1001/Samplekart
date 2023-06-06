@@ -1,0 +1,222 @@
+/* General Styles */
+body {
+    margin: 10px;
+    padding: 0px;
+    border-radius: 10px;
+    background-color: #6d6d6d;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* Header */
+  header {
+    background-color:#8ad6ff86;
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .cursor-pointer {
+    position: relative;
+    display: inline-block;
+  }
+
+  .cursor-pointer::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: #ffffff7a;
+    opacity: 0;
+    pointer-events: none;
+    animation: cursorHighlight 1s linear infinite;
+  }
+
+  .cursor-pointer:hover::after {
+    opacity: 0.5;
+  }
+
+  @keyframes cursorHighlight {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 0;
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.5);
+      opacity: 0.5;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 0;
+    }
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  nav ul li {
+    margin-left: 10px;
+  }
+  
+  nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  /* Home */
+  #home {
+    border-style:outset;
+    background-image: url(background1.png);
+    background-size: cover;
+    background-position: 50px;
+    text-align: center;
+    padding: 100px 70px;
+    color: #8ad6ff86;
+    font-size: 35px;
+  }
+  
+  /* Products */
+  #products {
+    padding: 20px;
+    color: d6ff86;
+    display: flex;
+  }
+  .column {
+    flex: 1;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.5s ease;
+  }
+  .column:hover{
+    background-color: #8ad6ff86;
+    color: blanchedalmond;
+  }
+
+  .left-column {
+    background-color: #e6e6e685;
+  }
+
+  .right-column {
+    background-color: #e6e6e685;
+  }
+  p {
+      line-height: 1.5;
+      color: #fff;
+    }
+
+  h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #8ad6ff86;
+    align-items: center;
+  }
+
+  .product {
+    text-align: center;
+    background-image: url(background3.png);
+    margin-bottom: 20px;
+    opacity: 10; /* Initial opacity */
+    animation: fade-in 1s ease-in-out forwards; /* Animation properties */
+  }
+  
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: translateY(20px); /* Optional: Add a subtle vertical transition */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .product img {
+    width: 100%;
+    max-width: 300px;
+  }
+  .btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 20px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: #ffffff;
+    color: #410bf5;
+  }
+  
+  .btn:focus {
+    outline: none;
+    box-shadow: 0 0 4px #333;
+  }
+
+  .price {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+  }
+  /* About */
+   #about {
+    border-style: initial;
+    background-image: url(background2.png);
+    border-radius: 10px;
+    background-size: cover;
+    background-position: 50px;
+    text-align: center;
+    padding: 80px 25px;
+    color: #0056bb;
+    font-size: 15px;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #8ad6ff86;
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+  }
+
+  /* Smooth Scrolling */
+html {
+    scroll-behavior: smooth; /* Enable smooth scrolling behavior */
+  }
+  
+  /* Scroll Transition */
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Adjust this value to account for the fixed header */
+    scroll-padding-bottom: 80px; /* Adjust this value to add space at the bottom of the page */
+  }
+  
+  body {
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    transition: scroll-behavior 0.3s ease-in-out; /* Smooth transition between scrolling behaviors */
+  }
+  
+  body.is-scrolling {
+    scroll-behavior: auto; /* Disable smooth scrolling during user scroll */
+  }
